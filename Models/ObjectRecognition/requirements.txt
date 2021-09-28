@@ -1,0 +1,12 @@
+numpy
+scipy
+wget
+seaborn
+tensorflow
+tensorflow-gpu
+opencv-python
+tqdm
+pandas
+awscli
+urllib3
+mss
