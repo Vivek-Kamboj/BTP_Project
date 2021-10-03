@@ -27,7 +27,7 @@ const Assistant = () => {
           history.push(`/text-to-speech`);
         } else if (link === "speech to text") {
           speak({ text: x });
-          history.push(`/speech to text`);
+          history.push(`/speech-to-text`);
         } else if (link === "home") {
           speak({ text: x });
           history.push(`/`);
@@ -54,13 +54,13 @@ const Assistant = () => {
     //   },
     // },
   ];
-  const { transcript } = useSpeechRecognition({ commands });
+  const { transcript: t1 } = useSpeechRecognition({ commands });
 
   return (
     <div style={{ border: "10px solid gray", padding: "10px" }}>
       <div>Hi, into Voice Assistant</div>
       <h3>Hello World!</h3>
-      <p>{transcript ? transcript : "Start listening for transcript"}</p>
+      <p>{t1 ? t1 : "Start listening for transcript"}</p>
       <button onClick={SpeechRecognition.startListening}>
         Start listening
       </button>

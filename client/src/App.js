@@ -12,20 +12,23 @@ import PageNotFound from "./components/pageNotFound";
 
 const App = () => (
   <React.Fragment>
-    <div>Navbar</div>
+    <div>
+      <Link to="/">home</Link>Navbar
+    </div>
     <div style={{ border: "2px solid gray", padding: "10px" }}>
       <Switch>
         <Route path="/object-detection" exact component={ObjectDetection} />
         <Route path="/image-to-text" exact component={ImageToText} />
         <Route path="/text-to-speech" exact component={TextToSpeech} />
         <Route path="/speech-to-text" exact component={SpeechToText} />
+        <Route path="/assistant" exact component={Assistant} />
         <Route path="/" exact component={Home} />
         <Route path="/page-not-found" exact component={PageNotFound} />
 
         <Redirect to="/page-not-found" />
       </Switch>
     </div>
-    <Assistant />
+    {/* <Assistant /> */}
     {/* <div>
       <h1>File Upload</h1>
       <FileUpload />
@@ -36,23 +39,6 @@ const App = () => (
         console.log("hiii camera");
       }}
     /> */}
-    <ul>
-      <li>
-        <Link to="/object-detection">object-detection</Link>
-      </li>
-      <li>
-        <Link to="/image-to-text">image-to-text</Link>
-      </li>
-      <li>
-        <Link to="/text-to-speech">text-to-speech</Link>
-      </li>
-      <li>
-        <Link to="/speech-to-text">speech-to-text</Link>
-      </li>
-      <li>
-        <Link to="/">home</Link>
-      </li>
-    </ul>
   </React.Fragment>
 );
 
