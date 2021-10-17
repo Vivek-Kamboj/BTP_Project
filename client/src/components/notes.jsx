@@ -14,10 +14,18 @@ const Notes = (props) => {
         props.notes.map((mynote) => (
           <div key={mynote.time} style={{ margin: "12px", padding: "5px" }}>
             <p>{mynote.val}</p>
-            <button onClick={() => handleDeleteNotes(mynote)}>Delete</button>
+            <button
+              onClick={() => {
+                handleDeleteNotes(mynote);
+                alert("Deleted!");
+              }}
+            >
+              Delete
+            </button>
             <button
               onClick={() => {
                 navigator.clipboard.writeText(mynote.val);
+                alert("copied on dashboard!");
               }}
             >
               copy

@@ -1,0 +1,99 @@
+.backgroundImage {
+  background-image: url(../assets/background-holdTogether.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  height: 800px;
+  background-size: cover;
+}
+
+.title {
+  position: relative;
+  /* z-index: 10; */
+  top: 36%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-family: Georgia, Times, "Times New Roman", serif;
+  text-align: center;
+}
+
+.header {
+  margin: 0;
+  font-size: 45px;
+  font-weight: bolder;
+  /* white-space: nowrap; */
+}
+
+.text {
+  margin: 0;
+  font-weight: lighter;
+  font-size: 30px;
+  letter-spacing: 8px;
+}
+
+.donateBtn {
+  position: relative;
+  top: 42%;
+  background-color: rgba(21, 215, 180, 1);
+  border-radius: 66px 66px 66px 66px;
+  width: 200px;
+  border: none;
+  display: block;
+  margin: auto;
+}
+.donateBtn:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -7px;
+  bottom: -7px;
+  left: -7px;
+  right: -7px;
+  border-radius: 66px;
+  border: 3px solid rgba(21, 215, 180, 1);
+}
+.donateBtn:hover {
+  background-color: rgb(11, 146, 121);
+}
+
+@media only screen and (max-width: 550px) {
+  .header {
+    font-size: 35px;
+  }
+
+  .text {
+    font-size: 25px;
+  }
+}
+
+@media only screen and (max-height: 450px) {
+  .title {
+    top: 25%;
+  }
+
+  .header {
+    font-size: 35px;
+  }
+
+  .text {
+    font-size: 25px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .donateBtn {
+    top: 42%;
+    width: 150px;
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 750px) and (max-width: 1400px) and (min-height: 800px) {
+  .title {
+    top: 38%;
+  }
+  .donateBtn {
+    top: 53%;
+  }
+}

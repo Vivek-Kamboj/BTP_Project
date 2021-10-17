@@ -1,0 +1,58 @@
+:root {
+  --scrolled: rgba(255, 255, 255, 1);
+}
+
+.bodyPadding {
+  height: 70px;
+  width: 100%;
+}
+.title {
+  height: 70px;
+}
+.brand {
+  padding: 0%;
+  height: 70px;
+  width: 40%;
+}
+
+.navbar {
+  color: rgb(4, 44, 37);
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  transition: 1s;
+  z-index: 1;
+  background-color: rgb(18, 192, 160);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  list-style-type: none;
+  float: left;
+}
+a {
+  height: 70px;
+}
+
+li a {
+  display: block;
+  color: inherit;
+  text-align: center;
+  padding: 20px 16px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+li a:hover {
+  text-decoration: none;
+  color: inherit;
+}

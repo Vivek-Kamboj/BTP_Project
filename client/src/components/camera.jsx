@@ -1,54 +1,46 @@
 import React, { Component } from "react";
 
 export default class CameraFeed extends Component {
-  /**
-   * Processes available devices and identifies one by the label
-   * @memberof CameraFeed
-   * @instance
-   */
   processDevices(devices) {
     devices.forEach((device) => {
       console.log(device.label);
-      this.setDevice(device);
+      if (device.kind === "videoinput") this.setVideoDevice(device);
     });
   }
 
-  /**
-   * Sets the active device and starts playing the feed
-   * @memberof CameraFeed
-   * @instance
-   */
-  async setDevice(device) {
+  async setVideoDevice(device) {
     const { deviceId } = device;
     const stream = await navigator.mediaDevices.getUserMedia({
       audio: false,
       video: { deviceId },
     });
-    this.videoPlayer.srcObject = stream;
-    this.videoPlayer.play();
+    console.log("stream", stream);
+    if (this.videoPlayer && stream !== null)
+      this.videoPlayer.srcObject = stream;
+    this.videoPlayer?.play();
   }
 
-  /**
-   * On mount, grab the users connected devices and process them
-   * @memberof CameraFeed
-   * @instance
-   * @override
-   */
   async componentDidMount() {
-    const cameras = await navigator.mediaDevices.enumerateDevices();
-    this.processDevices(cameras);
+    const allDevices = await navigator.mediaDevices.enumerateDevices();
+    console.log("allDevices", allDevices);
+    this.processDevices(allDevices);
+  }
+  async componentWillUnmount() {
+    if (this.videoPlayer && this.videoPlayer.srcObject)
+      this.videoPlayer.srcObject.getTracks().forEach(function (track) {
+        console.log("trabck", track);
+        if (track.readyState === "live" && track.kind === "video") {
+          track.stop();
+        }
+      });
   }
 
-  /**
-   * Handles taking a still image from the video feed on the camera
-   * @memberof CameraFeed
-   * @instance
-   */
   takePhoto = () => {
     const { sendFile } = this.props;
     const context = this.canvas.getContext("2d");
     context.drawImage(this.videoPlayer, 0, 0, 680, 360);
     this.canvas.toBlob(sendFile);
+    this.props.closeWindow();
   };
 
   render() {
@@ -56,13 +48,16 @@ export default class CameraFeed extends Component {
       <div className="c-camera-feed">
         <div className="c-camera-feed__viewer">
           <video
-            ref={(ref) => (this.videoPlayer = ref)}
+            ref={(ref) => {
+              console.log("videoref", ref);
+              if (ref) this.videoPlayer = ref;
+            }}
             width="680"
             heigh="360"
           />
         </div>
         <button onClick={this.takePhoto}>Take photo!</button>
-        <div className="c-camera-feed__stage">
+        <div className="c-camera-feed__stage" style={{ display: "none" }}>
           <canvas width="680" height="360" ref={(ref) => (this.canvas = ref)} />
         </div>
       </div>

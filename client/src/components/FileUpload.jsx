@@ -1,14 +1,12 @@
 import React, { useState } from "react";
-// import Camera from "./camera";
+import Camera from "./camerautil";
 
 const FileUpload = (props) => {
   // let uploadInput = "";
 
   const [preview, setPreview] = useState();
   const [uploadImage, setUploadImage] = useState();
-  const handleUploadImage = (ev) => {
-    ev.preventDefault();
-
+  const handleUploadImage = () => {
     const data = new FormData();
     data.append("file", uploadImage);
     // data.append("file", uploadInput.files[0]);
@@ -47,7 +45,11 @@ const FileUpload = (props) => {
 
   return (
     <React.Fragment>
-      <form onSubmit={handleUploadImage}>
+      <form
+        onSubmit={(ev) => {
+          ev.preventDefault();
+        }}
+      >
         <div>
           <input
             // ref={(ref) => {
@@ -67,17 +69,17 @@ const FileUpload = (props) => {
           />
         </div> */}
         <br />
-        {/* <Camera
+        <Camera
           sendFile={async (file) => {
-            uploadInput = file;
+            // var uploadInput = file;
             const objectUrl = URL.createObjectURL(file);
             setPreview(objectUrl);
             setUploadImage(file);
             console.log("camera");
           }}
-        /> */}
+        />
         <div>
-          <button>Upload</button>
+          <button onClick={{ handleUploadImage }}>Upload</button>
         </div>
       </form>
       {preview && <img src={preview} alt="Uploaded" />}
