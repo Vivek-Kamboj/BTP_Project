@@ -17,7 +17,6 @@ const App = () => (
     <div id="page-container">
       <div id="content-wrap">
         <Navbar />
-
         <div>
           <Switch>
             <Route path="/object-detection" exact component={ObjectDetection} />

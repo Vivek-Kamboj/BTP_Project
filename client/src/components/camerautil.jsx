@@ -9,6 +9,7 @@ const Util = (props) => {
   return (
     <React.Fragment>
       <button
+        className="btn btn-light btn-outline-secondary w-100 "
         onClick={() => {
           setShowCamera(true);
         }}

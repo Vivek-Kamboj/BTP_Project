@@ -17,29 +17,5 @@ body {
 }
 
 #content-wrap {
-  padding-bottom: 20rem;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1070px) {
-  #content-wrap {
-    padding-bottom: 23rem;
-  }
-}
-
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-  #content-wrap {
-    padding-bottom: 37.5rem;
-  }
-}
-
-@media only screen and (min-width: 326px) and (max-width: 479px) {
-  #content-wrap {
-    padding-bottom: 39rem;
-  }
-}
-
-@media only screen and (max-width: 325px) {
-  #content-wrap {
-    padding-bottom: 48rem;
-  }
+  padding-bottom: 10rem;
 }

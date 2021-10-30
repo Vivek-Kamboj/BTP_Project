@@ -7,7 +7,7 @@ import numpy as np
 def Img2txt():
     IMAGE_PATH = "./uploads/test_docs/input.jpg"
     IMAGE_Output_PATH = "./uploads/test_docs/output.jpg"
-    reader = easyocr.Reader(['en'])
+    reader = easyocr.Reader(['en','hi'])
     result = reader.readtext(IMAGE_PATH)
     # print(result)
     # print("Hello World") 

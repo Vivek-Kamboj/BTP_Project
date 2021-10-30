@@ -66,6 +66,8 @@ const Assistant = () => {
       </button>
       &nbsp;
       <button onClick={SpeechRecognition.stopListening}>Stop listening</button>
+      <p>Hi</p>
+      <a href="www.google.com">hi</a>
     </div>
   );
 };

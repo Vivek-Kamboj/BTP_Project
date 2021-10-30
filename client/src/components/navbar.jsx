@@ -35,13 +35,41 @@ const Navbar = () => {
             <li style={{ float: "right" }}>
               <Link to="/about-us">ABOUT US</Link>
             </li>
-            <li style={{ float: "right" }}>
-              <Link to="/contact-us">CONTACT US</Link>
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="/"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+
+              {/* <ul
+                className="nav-link dropdown-menu"
+                aria-labelledby="dropdownMenuButton1"
+              >
+                <li>
+                  <a className="dropdown-item" href="/">
+                    Action
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="/">
+                    Another action
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="/">
+                    Something else here
+                  </a>
+                </li>
+              </ul> */}
             </li>
             <li style={{ float: "right" }}>
-              hi
-              <li className="nav-item dropdown">1</li>
-              <li>2</li>
+              <Link to="/contact-us">CONTACT US</Link>
             </li>
           </ul>
         </div>
