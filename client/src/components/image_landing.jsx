@@ -7,10 +7,9 @@ const ImageLanding = () => {
     <React.Fragment>
       <div className={styles.backgroundImage}>
         <div className={styles.title}>
-          <p className={styles.text}> Aakhe</p>
-          <p className={styles.header}>
-            {" "}
-            This is a project for providing vision to blind peoples.
+          <p className={styles.header}> Aakhe - BTP Project</p>
+          <p className={styles.text}>
+            This project provides assistance to visually impaired people.
           </p>
         </div>
         <Link
@@ -21,7 +20,7 @@ const ImageLanding = () => {
           offset={-70}
           duration={500}
         >
-          <button className={`btn btn-success p-3 ${styles.donateBtn}`}>
+          <button className={`btn btn-primary p-3 ${styles.donateBtn}`}>
             Explore Features
           </button>
         </Link>

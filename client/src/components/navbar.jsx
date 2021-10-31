@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./styles/navbar.module.css";
 
 const Navbar = () => {
+  const [showFeature, setShowFeature] = useState(false);
   return (
     <React.Fragment>
       <div className={styles.bodyPadding}></div>
       <nav className={`navbar navbar-expand-md sticky-top ${styles.navbar}  `}>
         <li className={`navbar-brand ${styles.title}`}>
           <Link className={styles.brand} to="/">
-            Aakhe
+            Aakhe - BTP Project
           </Link>
         </li>
 
@@ -31,45 +32,80 @@ const Navbar = () => {
         </button>
 
         <div className="collapse navbar-collapse" id="navbarToggler">
-          <ul className={`navbar-nav `} style={{ margin: "0 0 0 auto" }}>
+          <ul className={`navbar-nav`} style={{ margin: "0 0 0 auto" }}>
+            <li style={{ float: "right" }}>
+              <Link
+                to="/"
+                onClick={(ev) => {
+                  ev.preventDefault();
+                  setShowFeature(!showFeature);
+                }}
+              >
+                FEATURES
+              </Link>
+              {showFeature && (
+                <ul className="nav-link dropdown-menu">
+                  <li>
+                    <Link
+                      className={` ${styles.x}`}
+                      to="/object-detection"
+                      onClick={() => {
+                        setShowFeature(false);
+                      }}
+                    >
+                      Object-detection
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className={styles.x}
+                      to="/image-to-text"
+                      onClick={() => {
+                        setShowFeature(false);
+                      }}
+                    >
+                      Image-To-Text
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className={styles.x}
+                      to="/text-to-speech"
+                      onClick={() => {
+                        setShowFeature(false);
+                      }}
+                    >
+                      Text-To-Speech
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className={styles.x}
+                      to="/speech-to-text"
+                      onClick={() => {
+                        setShowFeature(false);
+                      }}
+                    >
+                      Speech-To-Text
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className={styles.x}
+                      to="/assistant"
+                      onClick={() => {
+                        setShowFeature(false);
+                      }}
+                    >
+                      Assistant
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            </li>
+
             <li style={{ float: "right" }}>
               <Link to="/about-us">ABOUT US</Link>
-            </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="/"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-
-              {/* <ul
-                className="nav-link dropdown-menu"
-                aria-labelledby="dropdownMenuButton1"
-              >
-                <li>
-                  <a className="dropdown-item" href="/">
-                    Action
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="/">
-                    Another action
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="/">
-                    Something else here
-                  </a>
-                </li>
-              </ul> */}
-            </li>
-            <li style={{ float: "right" }}>
-              <Link to="/contact-us">CONTACT US</Link>
             </li>
           </ul>
         </div>

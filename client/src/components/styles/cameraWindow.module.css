@@ -18,3 +18,8 @@
   text-align: center;
   overflow: hidden;
 }
+.cross {
+  position: relative;
+  top: -100px;
+  right: -500px;
+}

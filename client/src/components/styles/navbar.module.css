@@ -10,9 +10,15 @@
   height: 70px;
 }
 .brand {
-  padding: 0%;
+  /* padding: 25%; */
+  padding: 12px 10px;
+  font-size: 1.2rem;
   height: 70px;
-  width: 40%;
+  /* width: 40%; */
+}
+.x {
+  width: 100%;
+  color: blue;
 }
 
 .navbar {
@@ -25,14 +31,14 @@
   padding: 0;
   transition: 1s;
   z-index: 1;
-  background-color: rgb(18, 192, 160);
+  background-color: #cfecff;
 }
 
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 li {

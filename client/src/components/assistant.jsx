@@ -57,18 +57,36 @@ const Assistant = () => {
   const { transcript: t1 } = useSpeechRecognition({ commands });
 
   return (
-    <div style={{ border: "10px solid gray", padding: "10px" }}>
-      <div>Hi, into Voice Assistant</div>
-      <h3>Hello World!</h3>
-      <p>{t1 ? t1 : "Start listening for transcript"}</p>
-      <button onClick={SpeechRecognition.startListening}>
-        Start listening
-      </button>
-      &nbsp;
-      <button onClick={SpeechRecognition.stopListening}>Stop listening</button>
-      <p>Hi</p>
-      <a href="www.google.com">hi</a>
-    </div>
+    <React.Fragment>
+      <div
+        className="row m-2 p-4"
+        style={{ background: "#f5f5f5", textAlign: "center" }}
+      >
+        <h1
+          style={{
+            fontFamily: "Georgia, Times, serif",
+            fontSize: "45px",
+            fontWeight: "bolder",
+          }}
+        >
+          SpeechToText
+        </h1>
+      </div>
+      <div style={{ border: "10px solid gray", padding: "10px" }}>
+        <div>Hi, into Voice Assistant</div>
+        <h3>Hello World!</h3>
+        <p>{t1 ? t1 : "Start listening for transcript"}</p>
+        <button onClick={SpeechRecognition.startListening}>
+          Start listening
+        </button>
+        &nbsp;
+        <button onClick={SpeechRecognition.stopListening}>
+          Stop listening
+        </button>
+        <p>Hi</p>
+        <a href="www.google.com">hi</a>
+      </div>
+    </React.Fragment>
   );
 };
 

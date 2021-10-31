@@ -48,6 +48,7 @@ export default class CameraFeed extends Component {
       <div className="c-camera-feed">
         <div className="c-camera-feed__viewer">
           <video
+            style={{ maxWidth: "100%" }}
             ref={(ref) => {
               console.log("videoref", ref);
               if (ref) this.videoPlayer = ref;
@@ -56,7 +57,9 @@ export default class CameraFeed extends Component {
             heigh="360"
           />
         </div>
-        <button onClick={this.takePhoto}>Take photo!</button>
+        <button className="btn btn-lg btn-primary" onClick={this.takePhoto}>
+          Capture Image
+        </button>
         <div className="c-camera-feed__stage" style={{ display: "none" }}>
           <canvas width="680" height="360" ref={(ref) => (this.canvas = ref)} />
         </div>

@@ -24,7 +24,20 @@ const TextToSpeech = () => {
 
   return (
     <React.Fragment>
-      <h2>Text To Speech</h2>
+      <div
+        className="row m-2 p-4"
+        style={{ background: "#f5f5f5", textAlign: "center" }}
+      >
+        <h1
+          style={{
+            fontFamily: "Georgia, Times, serif",
+            fontSize: "45px",
+            fontWeight: "bolder",
+          }}
+        >
+          Text to Speech
+        </h1>
+      </div>
       <form>
         {!supported && (
           <p>

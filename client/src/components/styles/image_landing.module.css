@@ -1,5 +1,5 @@
 .backgroundImage {
-  background-image: url(../assets/background-holdTogether.jpg);
+  background-image: url(https://www.eletimes.com/wp-content/uploads/2021/02/How-Artificial-Intelligence-Save-People-From-Blindness.jpg);
   background-position: center;
   background-repeat: no-repeat;
   display: block;
@@ -16,12 +16,14 @@
   color: white;
   font-family: Georgia, Times, "Times New Roman", serif;
   text-align: center;
+  text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
 }
 
 .header {
   margin: 0;
   font-size: 45px;
   font-weight: bolder;
+  text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
   /* white-space: nowrap; */
 }
 
@@ -30,17 +32,19 @@
   font-weight: lighter;
   font-size: 30px;
   letter-spacing: 8px;
+  text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
 }
 
 .donateBtn {
   position: relative;
   top: 42%;
-  background-color: rgba(21, 215, 180, 1);
+  background-color: #085181;
   border-radius: 66px 66px 66px 66px;
   width: 200px;
   border: none;
   display: block;
   margin: auto;
+  /* color: black; */
 }
 .donateBtn:after {
   content: "";
@@ -51,10 +55,10 @@
   left: -7px;
   right: -7px;
   border-radius: 66px;
-  border: 3px solid rgba(21, 215, 180, 1);
+  border: 3px solid #cfecff;
 }
 .donateBtn:hover {
-  background-color: rgb(11, 146, 121);
+  background-color: #cfecff;
 }
 
 @media only screen and (max-width: 550px) {
