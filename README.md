@@ -42,9 +42,35 @@ using their default browser without any need for installation of any kind of app
 our system. However, it may need an internet connection to load the application in the
 browser.
 
+## ARCHITECTURE/ METHODOLOGY
+My aim in this project is to build a smart virtual assistant for visually impaired people
+that would be helpful for them in their daily routine. This assistant application would
+provide a different look about their surroundings to the user. It would have the following
+modules:
 
+![image](https://user-images.githubusercontent.com/43985107/141274816-2c27c4f2-bbdf-4337-a006-9cd1f2c85124.png)
 
- ## Tech Stack 💻
+1. **Object Detection** <br>
+     It is done using `YOLO` algorithm.
+2. **Image to text/speech convertor** <br>
+     It is done using `easyOCR`.
+3. **Speech to text converter** <br>
+     It is done using `WebSpeechAPI`.
+4. **Text to Speech** <br>
+     It is done using `WebSpeechAPI`.
+5. **Voice assistant** <br>
+     It is done using `WebSpeechAPI`.<br><br>
+     
+     
+I have planned to make a web application to integrate these modules as a web
+application can run in any system’s browser, whether it is a desktop or a smartphone,
+without any need to install any software. The user only needs to go to the particular
+website, and this application would get loaded into the browser and start working.
+However, for this to work Internet connection is required. I am considering using the
+React.js framework and python as backend to implement this project and run these models in
+the system’s browser
+
+## Tech Stack 💻
  
  **MERN** stack has been used for the development of this website. 
  - [React.js](https://reactjs.org/)
@@ -54,16 +80,36 @@ browser.
  - [Yolo algorithm]()
  - [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API)
 
+## SetUp Steps
+
+**Prerequisites:** Python, Flask, npm, pip, create-react-app, etc.
+
+### For Frontend
+ - Write `cd ./client` in terminal for going in frontend folder.
+ - Run `npm install` for installing dependencies.
+ - Run `npm start`
+
+### For Backend
+ - Install libraries like numpy, pandas, pillow easyocr, tensorflow, openCV, keras, matplotlib, etc. by running `pip install <<Library_name>>`.
+ - Download yolo weight and put it in model_data. [For reference.](https://medium.com/analytics-vidhya/yolov3-object-detection-in-tensorflow-2-x-8a1a104c46a8)
+ - Run `python ./server.py`
+ 
+**Hurray, Your app is now running on port 3000 in your browser**
 
 ## Demo :man_technologist:
 Link : https://www.youtube.com/watch?v=0TPdp-As1Ac
 
-## SetUp Steps
-
-### Prerequisites
-npm installed, create-react-app installed, etc. <br>
-
- 
-**Hurray, Your app is now running on port 3000 in your browser**
-
 ## Screenshots
+**Object Detection**<br><br>
+![image](https://user-images.githubusercontent.com/43985107/141276512-d3c5dd12-c812-4a8c-9d83-9e38afee8240.png)
+![image](https://user-images.githubusercontent.com/43985107/141276634-ec67209d-632b-47f2-bf15-cb6dc565f36a.png)
+**Image to Text**<br><br>
+![image](https://user-images.githubusercontent.com/43985107/141276883-0d119dd7-194c-4f2a-920e-911f34f4a823.png)
+**Text to Speech**<br><br>
+![image](https://user-images.githubusercontent.com/43985107/141277020-9136196b-04eb-4c64-bb45-abf6273862b4.png)
+**Speech to Text**<br><br>
+![image](https://user-images.githubusercontent.com/43985107/141277135-eb0c170a-0e14-41f7-9838-1be3edab5324.png)
+**Assistant** <br>
+- It can perform task like go to <page>, search on google, play on youtube, weather, etc...
+
+
